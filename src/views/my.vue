@@ -1,24 +1,24 @@
 <template>
-  <div class="user">
-  	<section class="user-info">
-  		<img :src="user.avatar" :alt="user.username" :title="user.username">
-  		<h3>{{user.username}}</h3>
-  	</section>
-  	<section class="article">
-  		<div class="item" v-for="blog in blogs">
-  			<div class="date"  @click="goTodetail(blog.id)">
-  				<span class="day">{{splitDateStr(blog.createdAt).day}}</span>
-  				<span class="month">{{splitDateStr(blog.createdAt).month}}月</span>
-  				<span class="year">{{splitDateStr(blog.createdAt).year}}</span>
-  			</div>
-  			<h3  @click="goTodetail(blog.id)">{{blog.title}}</h3>
-  			<p  @click="goTodetail(blog.id)">{{blog.description}}</p>
-  			<div class="btn">
-  				<el-button type="text" @click="onEdit(blog.id)">编辑</el-button>
-  				<el-button type="text" @click="onDelete(blog.id)">删除</el-button>
-  			</div>
-  		</div>
-  	</section>
+	<div class="user">
+		<section class="user-info">
+			<img :src="user.avatar" :alt="user.username" :title="user.username">
+			<h3>{{user.username}}</h3>
+		</section>
+		<section class="article">
+			<div class="item" v-for="blog in blogs" :key="blog.id">
+				<div class="date"  @click="goTodetail(blog.id)">
+					<span class="day">{{splitDateStr(blog.createdAt).day}}</span>
+					<span class="month">{{splitDateStr(blog.createdAt).month}}月</span>
+					<span class="year">{{splitDateStr(blog.createdAt).year}}</span>
+				</div>
+				<h3 @click="goTodetail(blog.id)">{{blog.title}}</h3>
+				<p @click="goTodetail(blog.id)">{{blog.description}}</p>
+				<div class="btn">
+					<el-button type="text" @click="onEdit(blog.id)">编辑</el-button>
+					<el-button type="text" @click="onDelete(blog.id)">删除</el-button>
+				</div>
+			</div>
+		</section>
     <section class="page">
 			<el-pagination
 				@current-change="handleCurrentChange"
