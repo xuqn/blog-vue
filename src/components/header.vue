@@ -38,7 +38,7 @@ export default {
 		...mapGetters(['isLogin','user'])
 	},
 	created() {
-		this.checklogin()
+		// this.checklogin()
 	},
 	methods: {
 		...mapActions(['checklogin','logout']),

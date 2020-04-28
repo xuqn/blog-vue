@@ -26,8 +26,7 @@ function friendlyDate(dateStr) {
 }
 
 export default {
-	install(Vue,options) {
-		console.log(options)
+	install(Vue) {
 		Vue.prototype.friendlyDate = friendlyDate
 	}
 }
