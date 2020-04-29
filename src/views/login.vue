@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+	<div class="login">
 		<div>
 			<h3>用户名：</h3>
 			<el-input v-model="username" placeholder="请输入用户名"></el-input>
@@ -16,87 +16,81 @@
 			<el-button plain type="success" size="small" @click="onLogin">立即登陆</el-button>
 			<P class="foot">没有帐号？<router-link to="/register">注册新用户</router-link></P>
 		</div>
-  </div>
+	</div>
 </template>
 
 
 <script>
-
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 export default {
-	data() {
-		return {
-			username: '',
-			password: ''
-		}
-	},
-	computed: {
-	},
-	methods: {
-		...mapActions(['login']),
-		onLogin() {
-			if (!this.username) {
-				this.$message.error('请输入用户名')
-				return
-			}
-			if (this.username.length > 15) {
-				this.$message.error('请输入正确的用户名')
-				return
-			}
-			if (this.password.length<6 || this.password.length>16) {
-				this.$message.error('密码错误')
-				return
-			}
-			this.login({ username: this.username,password: this.password})
-			.then(() => {
-				this.$router.push({ path: this.$route.query.redirect || '/'})
-			})
-		},
-		showPassword(e) {
-			let input = e.target.parentNode.parentNode.parentNode.childNodes[1]
-			input.type = (input.type === 'password'?'text':'password')
-		}
-	}
-}
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+  computed: {},
+  methods: {
+    ...mapActions(['login']),
+    onLogin() {
+      if (!this.username) {
+        this.$message.error('请输入用户名');
+        return;
+      }
+      if (this.username.length > 15) {
+        this.$message.error('请输入正确的用户名');
+        return;
+      }
+      if (this.password.length < 6 || this.password.length > 16) {
+        this.$message.error('密码错误');
+        return;
+      }
+      this.login({ username: this.username, password: this.password }).then(() => {
+        this.$router.push({ path: this.$route.query.redirect || '/' });
+      });
+    },
+    showPassword(e) {
+      let input = e.target.parentNode.parentNode.parentNode.childNodes[1];
+      input.type = input.type === 'password' ? 'text' : 'password';
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-
 .login {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	.el-input {
-		width: 400px;
-	}
+  .el-input {
+    width: 400px;
+  }
 
-	h3 {
-		font-size: 14px;
-		font-weight: 700;
+  h3 {
+    font-size: 14px;
+    font-weight: 700;
     color: #666;
-	}
+  }
 
-	p {
-		font-size: 12px;
-		line-height: 1.5;
-		color: #999;
-	}
+  p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #999;
+  }
 
-	a {
-		color: #090;
-	}
+  a {
+    color: #090;
+  }
 
-	.foot {
-		float: right;
-	}
+  .foot {
+    float: right;
+  }
 
-	.el-input__icon {
-		font-size: 20px;
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
+  .el-input__icon {
+    font-size: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 </style>
-

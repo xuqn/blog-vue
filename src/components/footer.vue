@@ -5,10 +5,10 @@
 </template>
 
 <style>
-	footer {
-		background-color: #d7d7d7;
-		text-align: center;
-		font-size: 14px;
-		color: #666;
-	}
+footer {
+	background-color: #d7d7d7;
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+}
 </style>

@@ -1,25 +1,27 @@
 <template>
-  <div id="app">
-    <Head class="header"/>
-    <router-view class="main"/>
-    <Foot class="footer"/>
-  </div>
+	<div id="app">
+		<Head class="header"/>
+		<router-view class="main"/>
+		<Foot class="footer"/>
+	</div>
 </template>
 
 <script>
-	import Head from '@/components/header'
-	import Foot from '@/components/footer'
+import Head from '@/components/header';
+import Foot from '@/components/footer';
 
-	export default {
-		components: {
-			Head,
-			Foot
-		}
-	}
+export default {
+  components: {
+    Head,
+    Foot,
+  },
+};
 </script>
 <style lang="scss">
-html,body,#app{
-	height: 100%;
+html,
+body,
+#app {
+  height: 100%;
 }
 body {
   margin: 0;
@@ -29,9 +31,10 @@ body {
   display: grid;
   grid-template-columns: 13% auto 13%;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "header header header"
-                        ".     main   ."
-                        "footer footer footer";
+  grid-template-areas:
+    'header header header'
+    '.     main   .'
+    'footer footer footer';
   .header {
     grid-area: header;
     padding: 0 12%;

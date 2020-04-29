@@ -23,44 +23,40 @@
 </template>
 
 <script>
-
-import { mapGetters,mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: 'home',
-  components: {
-  },
+	name: 'home',
+	components: {},
 	data() {
-		return {
-		}
+		return {};
 	},
 	computed: {
-		...mapGetters(['isLogin','user'])
+		...mapGetters(['isLogin', 'user']),
 	},
 	created() {
 		// this.checklogin()
 	},
 	methods: {
-		...mapActions(['checklogin','logout']),
+		...mapActions(['checklogin', 'logout']),
 		onLogout() {
-			this.logout()
-			this.$router.push('/')
+			this.logout();
+			this.$router.push('/');
 		},
 		onLogin() {
-			this.$router.push('/login')
+			this.$router.push('/login');
 		},
 		onRegister() {
-			this.$router.push('/register')
+			this.$router.push('/register');
 		},
 		onMy() {
-			this.$router.push('/my')
-		}
-	}
-}
+			this.$router.push('/my');
+		},
+	},
+};
 </script>
 
 <style lang="scss">
-
 @import '@/assets/base.scss';
 header {
 	background-color: $them-color;
@@ -96,16 +92,16 @@ header.is-login {
 	img {
 		border-radius: 50%;
 		&:hover {
-			&+ul {
+			& + ul {
 				display: block;
 			}
 		}
 	}
 	ul {
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
-    border: 1px solid rgba(177,180,185,.45);
-    border-radius: 4px;
+		background-color: #fff;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+		border: 1px solid rgba(177, 180, 185, 0.45);
+		border-radius: 4px;
 		position: absolute;
 		top: 64px;
 		padding: 0;
@@ -119,5 +115,4 @@ header.is-login {
 		}
 	}
 }
-
 </style>
