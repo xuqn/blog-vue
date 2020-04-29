@@ -9,7 +9,7 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "element-ui": "^2.4.11",
     "marked": "^0.5.2",
     "vue": "^2.5.17",
