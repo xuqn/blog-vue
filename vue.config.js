@@ -18,7 +18,7 @@ module.exports = {
     port: 5000,
     https: false,
     hotOnly: false,
-    proxy: null,
+    // proxy: 'https://blog-server.hunger-valley.com',
     before: (app) => {},
   },
 };
